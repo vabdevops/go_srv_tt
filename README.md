@@ -26,3 +26,16 @@ Connect to EC2 via SSH
 ```sh
 ssh -i PATH_TO_PRIVATE_KEY ubuntu@PUBLIC_EC2_IP
 ```
+### OpenVPN Server installation
+To install Access Server, use the official repository. Log in to your Linux system with root privileges, and enter these commands to add the repository and install the package 'openvpn-as'. The client bundle installs automatically.
+```sh
+sudo su
+
+apt update && apt -y install ca-certificates wget net-tools gnupg
+
+wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc
+
+echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/as-repository.asc] http://as-repository.openvpn.net/as/debian jammy main">/etc/apt/sources.list.d/openvpn-as-repo.list
+
+apt update && apt -y install openvpn-as
+```
