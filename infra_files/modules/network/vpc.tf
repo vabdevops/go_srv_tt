@@ -1,3 +1,5 @@
+# Description: This file contains the code to create VPC, Subnets, Route Tables, Internet Gateway, NAT Gateway, Elastic IP, etc.
+# Create VPC
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
   enable_dns_hostnames = true
