@@ -46,7 +46,7 @@ variable "tags" {
   default = {
     appname     = "ecs"
     environment = "test"
-    service     = "network"
+    service     = "cluster"
     region      = "us-east-1"
   }
 }

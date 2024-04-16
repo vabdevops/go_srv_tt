@@ -8,7 +8,7 @@ module "network" {
   azs                   = var.azs
 
   project_name = var.project_name
-  tags                  = var.tags
+  tags         = var.tags
 }
 
 
