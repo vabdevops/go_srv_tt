@@ -34,6 +34,12 @@ variable "max_size_asg" {
   default = 5
 }
 
+variable "desired_capacity" {
+  description = "Desired capacity of ASG"
+  type        = number
+  default = 2
+}
+
 variable "tags" {
   description = "Tags for project resources"
   type        = map(string)

@@ -3,6 +3,7 @@ resource "aws_autoscaling_group" "ecs" {
   vpc_zone_identifier       = var.private_subnet_ids
   min_size                  = var.min_size_asg
   max_size                  = var.max_size_asg
+  desired_capacity = var.desired_capacity
   health_check_grace_period = 0
   health_check_type         = "EC2"
   protect_from_scale_in     = false

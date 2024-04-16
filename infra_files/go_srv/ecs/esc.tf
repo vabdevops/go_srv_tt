@@ -6,6 +6,7 @@ module "ecs_cluster" {
   container_port = var.container_port
   min_size_asg = var.min_size_asg
   max_size_asg = var.max_size_asg
+  desired_capacity = var.desired_capacity
 
   private_subnet_ids = [
     data.aws_subnet.private_subnets_1.id,

@@ -38,6 +38,11 @@ variable "max_size_asg" {
   type        = number
 }
 
+variable "desired_capacity" {
+  description = "Desired capacity of ASG"
+  type        = number
+}
+
 variable "tags" {
   description = "Tags for project resources"
   type        = map(string)
