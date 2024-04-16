@@ -21,6 +21,9 @@ Go to ./infra_files/go_srv/open_vpn_srv
 terraform init -backend-config=vpnsrv_backend_cfg.tfvars
 terraform apply
 ```
+
+Use open_vpn_public_ip terraform output for connect to VPN server
+
 ### Install OpenVPN Server
 Connect to EC2 via SSH
 ```sh
@@ -38,4 +41,13 @@ wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.g
 echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/as-repository.asc] http://as-repository.openvpn.net/as/debian jammy main">/etc/apt/sources.list.d/openvpn-as-repo.list
 
 apt update && apt -y install openvpn-as
+```
+
+After installation use next information for connect to OpenVPN Server UI
+```sh
+Access Server Web UIs are available here:
+Admin  UI: https:PUBLIC_EC2_IP//:943/admin
+Client UI: https://PUBLIC_EC2_IP:943/
+To login please use the "openvpn" account with "some_password" password.
+(password can be changed on Admin UI)
 ```
